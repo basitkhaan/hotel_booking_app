@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
   @override
-  Widget build(BuildContext ctxt) {
+  Widget build(BuildContext context) {
     return new Scaffold(
       body: SafeArea(
         child: Column(
@@ -106,7 +106,7 @@ Widget lowerPartOfSecondPage() {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 17),
+            padding: const EdgeInsets.only(top: 27),
             child: Text('This house is very Modern, which is close to the station and is in the center of business.',
               style: TextStyle(
                 fontSize: 13,
@@ -114,13 +114,16 @@ Widget lowerPartOfSecondPage() {
                 letterSpacing: 1.1
               ),),
           ),
-          Text('Facilites',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),),
           Padding(
-            padding: const EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 30),
+            child: Text('Facilites',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 18),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -139,27 +142,38 @@ Widget lowerPartOfSecondPage() {
 
 Widget footer(){
   return Padding(
-    padding: const EdgeInsets.only(top:25.0),
+    padding: const EdgeInsets.only(top:50.0),
     child: Container(
-      color: Colors.grey,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Price\n",
+                Text("Price",
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    //fontWeight: FontWeight.bold,
                   ),),
-                Text("\$750"),
+                Text("\$750",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),),
               ],
             ),
           ),
           Container(
-            color:Color(0xffF8A537),
+            decoration: BoxDecoration(
+              color:Color(0xffF8A537),
+              border: Border.all(
+                color: Colors.black12,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
             child:Padding(
               padding: const EdgeInsets.all(15),
               child: Text('Book Now'),
@@ -178,7 +192,7 @@ Widget smallSizeImage() {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(5),
         child: Image(
-          height: 73,
+          height: 70,
           image: NetworkImage(
             'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
           ),
