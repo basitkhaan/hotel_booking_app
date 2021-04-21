@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './MainPage/header.dart';
-import './MainPage/hotelCard.dart';
-import './MainPage/lowerCard.dart';
-import './MainPage/TextField.dart';
+import './FirstPage_Files/header.dart';
+import './FirstPage_Files/hotelCard.dart';
+import './FirstPage_Files/lowerCard.dart';
+import './FirstPage_Files/TextField.dart';
 
 class MainPage extends StatelessWidget {
   @override

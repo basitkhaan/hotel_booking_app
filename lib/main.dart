@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:hotel_booking/MainPage.dart';
-import '2ndPage.dart';
+import 'package:hotel_booking/FirstPage.dart';
+import 'SecondPage.dart';
 void main() {
   runApp(firstPage());
 }
