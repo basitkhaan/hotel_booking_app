@@ -1,41 +1,44 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/FiveStars.dart';
+import 'package:hotel_booking/SmallSizeImage.dart';
 
 class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              child: Image(
-                image: NetworkImage(
-                  'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-                ),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.grey.shade100,
+            child: Image(
+              image: NetworkImage(
+                'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10,),
-              child: lowerPartOfSecondPage(),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
             ),
-          ],
-        ),
+            child: lowerPartOfSecondPage(context),
+          ),
+        ],
       ),
     );
   }
 }
 
-
-
-Widget lowerPartOfSecondPage() {
+Widget lowerPartOfSecondPage(BuildContext context) {
   return Container(
+    color: Colors.grey.shade100,
     child: Padding(
-      padding: const EdgeInsets.only(top:20.0),
+      padding: const EdgeInsets.only(top: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            color: Colors.grey.shade100,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,16 +48,18 @@ Widget lowerPartOfSecondPage() {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
-                      child: Text('Monal Hotel',
+                      child: Text(
+                        'Monal Hotel',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
-                        ),),
+                        ),
+                      ),
                     ),
                     Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(right:8.0),
+                          padding: const EdgeInsets.only(right: 8.0),
                           child: Icon(
                             Icons.location_on_rounded,
                             color: Color(0xffF76E78),
@@ -72,64 +77,59 @@ Widget lowerPartOfSecondPage() {
                   ],
                 ),
                 Container(
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.star_rate_rounded,
-                        color: Color(0xffF8A537),
-                        size: 18.0,
-                      ),
-                      Icon(
-                        Icons.star_rate_rounded,
-                        color: Color(0xffF8A537),
-                        size: 18.0,
-                      ),
-                      Icon(
-                        Icons.star_rate_rounded,
-                        color: Color(0xffF8A537),
-                        size: 18.0,
-                      ),
-                      Icon(
-                        Icons.star_half_rounded,
-                        color: Color(0xffF8A537),
-                        size: 18.0,
-                      ),
-                      Icon(
-                        Icons.star_border_rounded,
-                        color: Color(0xffF8A537),
-                        size: 18.0,
-                      ),
-                    ],
-                  ),
+                  color: Colors.grey.shade100,
+                  child: fiveStarsInRow(),
                 ),
               ],
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 27),
-            child: Text('This house is very Modern, which is close to the station and is in the center of business.',
+            child: Text(
+              'This house is very Modern, which is close to the station and is in the center of business.',
               style: TextStyle(
-                fontSize: 13,
-                color: Colors.grey,
-                letterSpacing: 1.1
-              ),),
+                  fontSize: 13, color: Colors.grey, letterSpacing: 1.1),
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Text('Facilites',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),),
+            padding: const EdgeInsets.only(top: 40),
+            child: Text(
+              'Facilites',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 18),
+            padding: const EdgeInsets.only(top: 25, left: 18, right: 18),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                smallSizeImage(),
-                smallSizeImage(),
-                smallSizeImage(),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
+                  child: smallSizeImage(
+                    'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
+                  child: smallSizeImage(
+                    'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
+                  child: smallSizeImage(
+                    'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+                  ),
+                ),
               ],
             ),
           ),
@@ -140,64 +140,50 @@ Widget lowerPartOfSecondPage() {
   );
 }
 
-Widget footer(){
+Widget footer() {
   return Padding(
-    padding: const EdgeInsets.only(top:50.0),
+    padding: const EdgeInsets.only(top: 55.0),
     child: Container(
+      color: Colors.grey.shade100,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+            color: Colors.grey.shade100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Price",
+                Text(
+                  "Price",
                   style: TextStyle(
                     fontSize: 14,
-                    fontStyle: FontStyle.italic,
-                    //fontWeight: FontWeight.bold,
-                  ),),
-                Text("\$750",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),),
+                  ),
+                ),
+                Text(
+                  "\$750",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ),
           Container(
             decoration: BoxDecoration(
-              color:Color(0xffF8A537),
+              color: Color(0xffF8A537),
               border: Border.all(
                 color: Colors.black12,
               ),
               borderRadius: BorderRadius.circular(8),
             ),
-            child:Padding(
+            child: Padding(
               padding: const EdgeInsets.all(15),
               child: Text('Book Now'),
             ),
           ),
         ],
-      ),
-    ),
-  );
-}
-
-
-Widget smallSizeImage() {
-  return Container(
-    child: Container(
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(5),
-        child: Image(
-          height: 70,
-          image: NetworkImage(
-            'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-          ),
-          fit: BoxFit.cover,
-        ),
       ),
     ),
   );

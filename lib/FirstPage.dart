@@ -4,11 +4,13 @@ import './FirstPage_Files/hotelCard.dart';
 import './FirstPage_Files/lowerCard.dart';
 import './FirstPage_Files/TextField.dart';
 
-class MainPage extends StatelessWidget {
+class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.grey.shade100,
+      body: Padding(
         padding: const EdgeInsets.only(left: 12,),
         child: Container(
           child: Column(
@@ -22,8 +24,8 @@ class MainPage extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    hotelCard(),
-                    hotelCard(),
+                    hotelCard(context),
+                    hotelCard(context),
                   ],
                 ),
               ),
@@ -39,10 +41,10 @@ class MainPage extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.vertical,
                   children: [
-                    lowerCard(),
-                    lowerCard(),
-                    lowerCard(),
-                    lowerCard(),
+                    lowerCard(context),
+                    lowerCard(context),
+                    lowerCard(context),
+                    lowerCard(context),
                   ],
                 ),
               ),

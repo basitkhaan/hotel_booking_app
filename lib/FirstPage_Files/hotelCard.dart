@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/FiveStars.dart';
+import 'package:hotel_booking/SecondPage.dart';
 
-Widget hotelCard() {
+Widget hotelCard(BuildContext context) {
   return Center(
     child: Container(
       width: 270,
@@ -10,7 +12,9 @@ Widget hotelCard() {
         shape:
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/second');
+          },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +28,6 @@ Widget hotelCard() {
                       borderRadius: BorderRadius.circular(8),
                       child: Image(
                         height: 220,
-                        // fit: BoxFit.fitHeight,
                         image: NetworkImage(
                           'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
                         ),
@@ -65,35 +68,7 @@ Widget hotelCard() {
                         Padding(
                           padding: const EdgeInsets.only(left: 40.0),
                           child: Container(
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.star_rate_rounded,
-                                  color: Color(0xffF8A537),
-                                  size: 20.0,
-                                ),
-                                Icon(
-                                  Icons.star_rate_rounded,
-                                  color: Color(0xffF8A537),
-                                  size: 20.0,
-                                ),
-                                Icon(
-                                  Icons.star_rate_rounded,
-                                  color: Color(0xffF8A537),
-                                  size: 20.0,
-                                ),
-                                Icon(
-                                  Icons.star_half_rounded,
-                                  color: Color(0xffF8A537),
-                                  size: 20.0,
-                                ),
-                                Icon(
-                                  Icons.star_border_rounded,
-                                  color: Color(0xffF8A537),
-                                  size: 20.0,
-                                ),
-                              ],
-                            ),
+                            child: fiveStarsInRow(),
                           ),
                         ),
                       ],

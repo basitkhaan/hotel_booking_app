@@ -1,60 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:hotel_booking/FirstPage.dart';
-import 'SecondPage.dart';
+import 'package:hotel_booking/SecondPage.dart';
+import 'ThirdPage.dart';
+
 void main() {
-  runApp(firstPage());
+  runApp(MyApp());
 }
 
-class firstPage extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _firstPageState createState() => _firstPageState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _firstPageState extends State<firstPage> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.grey.shade100,
-        // resizeToAvoidBottomInset: false,
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero, //remove any padding from ListView
-            children: [
-              UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                arrowColor: Colors.white,
-                accountName: Text("Ali"),
-                accountEmail: Text("abc123@gmail.com"),
-                currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://www.pinterest.com/pin/315814992625911839/"),
-                ),
-              ),
-              ListTile(
-                title: Text("Profile"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text("About"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              )
-            ],
-          ),
-        ),
-        body: SecondPage(),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => FirstPage(),
+        '/second': (context) => SecondPage(),
+        '/third': (context) => ThirdPage(),
+      },
     );
   }
 }
