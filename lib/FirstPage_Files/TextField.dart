@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 Widget searchTextField() {
   return Padding(
-    padding: const EdgeInsets.only(top: 10, right: 15),
+    padding: const EdgeInsets.only(top: 2, right: 15,),
     child: Container(
       child: Row(
         children: [
           Expanded(
             flex: 7,
             child: Container(
-              height: 40,
+              height: 60,
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
@@ -21,7 +21,7 @@ Widget searchTextField() {
                     borderSide: new BorderSide(
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(11),
+                    borderRadius: BorderRadius.circular(5),
                   ),
                 ),
               ),
@@ -30,13 +30,13 @@ Widget searchTextField() {
           Expanded(
             flex: 2,
             child: Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+              padding: const EdgeInsets.only(left: 15.0, bottom: 12 ),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(11),
+                  borderRadius: BorderRadius.circular(9),
                   color: Color(0xffFC6D7B),
                 ),
-                height: 42,
+                height: 48,
                 child: Icon(
                   Icons.search_rounded,
                   size: 32,

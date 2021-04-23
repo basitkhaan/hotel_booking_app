@@ -10,7 +10,7 @@ Widget hotelCard(BuildContext context) {
       child: Card(
         clipBehavior: Clip.antiAlias,
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: InkWell(
           onTap: () {
             Navigator.pushNamed(context, '/second');
@@ -25,7 +25,7 @@ Widget hotelCard(BuildContext context) {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(10),
                       child: Image(
                         height: 220,
                         image: NetworkImage(
