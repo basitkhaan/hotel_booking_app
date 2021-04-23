@@ -17,7 +17,7 @@ class FirstPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              header(),
+              header(context),
               searchTextField(),
               Container(
                 height: 350,

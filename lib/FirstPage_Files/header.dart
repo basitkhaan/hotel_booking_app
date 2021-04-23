@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget header() {
+Widget header(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(
       top: 20, right: 15,
@@ -58,10 +58,15 @@ Widget header() {
         Padding(
           padding: const EdgeInsets.only(left: 80.0),
           child: Container(
-            child: Icon(
-              Icons.shopping_bag,
-              color: Color(0xff5A4440),
-              size: 35.0,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: Icon(
+                Icons.login_rounded,
+                color: Color(0xff5A4440),
+                size: 35.0,
+              ),
             ),
           ),
         ),

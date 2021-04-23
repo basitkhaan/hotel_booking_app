@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hotel_booking/FirstPage.dart';
+import 'package:hotel_booking/LoginPage.dart';
 import 'package:hotel_booking/SecondPage.dart';
+import 'package:hotel_booking/SignupPage.dart';
 import 'ThirdPage.dart';
 
 void main() {
@@ -25,6 +27,8 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => FirstPage(),
         '/second': (context) => SecondPage(),
         '/third': (context) => ThirdPage(),
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignupPage(),
       },
     );
   }
